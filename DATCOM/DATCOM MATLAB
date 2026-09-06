@@ -1,0 +1,11 @@
+alldata = datcomimport('datcom.out', true, 0);
+To import. To refrence any balrues, use - data = alldata{1}
+
+multiple datcom files can be imported into a single variable as-
+alldata = datcomimport({'asbSkyHoggDatcom.out' 'asbSkyHoggDatcom_old.out'}, true, 0);
+Changing the index of the variable will change the data file accessed.
+
+you can access certain data as- alldata{1}.alpha
+you can view the design of the aircradu as- drawDATCOMaircraft(datcominputfile). comment out the test case for future use.
+
+In simulink, use the var name as before (here alldata), to refrence the datcom data in the block

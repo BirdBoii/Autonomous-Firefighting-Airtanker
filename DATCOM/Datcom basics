@@ -1,0 +1,44 @@
+Case sensitive.
+Proper indentations in the start of each line shoukd be there.
+Spaces can be added in a line anywhere except in the middle of words and numbers.
+
+
+Common problems when inporting into MATLAB-
+
+- Variables might be defined to 9999 or nan if there exists no equivalent variable in the DATCOM out file for this
+- Variables such as the elevator coefficients (dcl_sys) might be set to 9999 after inporting. The way to solve this is by defining the flap surface first and the elevaator surface later.
+By default, DATCOM processes the first as flaps and the latter as elevators.
+- It is important to define parameters such as CBARR and BLLREF in MATLAB to properly define the wing. If not, MATLAB might throw errors such as 'the parameter 'Value' resolves to 'b' that has an empty value.
+
+example -
+CASEID ----- MIKOYAN-GUREVICH MiG-17 -----
+ $FLTCON NMACH=10.0,MACH(1)=0.1,0.3,0.4,0.5,0.55,0.6,0.66,0.7,0.8,0.9,
+  NALPHA=10.0,ALPHA(1) =-4.0,-2.0,0.0,2.0, 4.0,6.0,8.0,10.0,12.0,14.0,
+  NALT=5.0,
+  ALT(1)= 4500.0,4750.0,5000.0,5250.0,5500.0,
+  WT=13395.0,LOOP=1.0$
+ $SYNTHS XCG=11.17,ZCG=0.0,XW=3.63,ZW=0.42,ALIW=1.0,XH=28.73,
+  ZH=5.24,ALIH=0.0,XV=18.3,ZV=0.0$
+ $OPTINS SREF=243.0$
+ $BODY NX=8.0,
+  X(1)=0.0,0.74,8.35,13.14,19.35,24.41,28.41,30.77,
+  S(1)=5.19,9.32,16.89,16.89,15.94,11.12,5.85,2.5$
+NACA-W-6-66-012
+ $WGPLNF CHRDTP=7.02,SSPNOP=11.32,SSPNE=13.41,SSPN=15.71,
+  CHRDBP=8.4,CHRDR=14.0,SAVSI=45.0,SAVSO=45.0,CHSTAT=0.25,
+  TWISTA=0.0,DHDADI=-3.0,DHDADO=-3.0,TYPE=1.0$
+NACA-H-6-66-009
+ $HTPLNF CHRDTP=1.86,SSPNE=5.42,SSPN=5.43,CHRDR=4.69,SAVSI=45.0,
+  CHSTAT=0.25,TYPE=1.0$
+NACA-V-6-66-009
+ $VTPLNF CHRDTP=3.76,SSPNE=6.05,SSPN=8.18,CHRDR=12.47,SAVSI=55.0,
+  CHSTAT=0.25,TYPE=1.0$
+DIM FT
+BUILD
+PLOT
+NEXT CASE
+
+Refrences-
+http://wpage.unina.it/agodemar/DSV-DQV/DATCOM_Tutorial_I.pdf
+http://wpage.unina.it/agodemar/DSV-DQV/Digital_Datcom_Users_Manual_1.2.pdf
+

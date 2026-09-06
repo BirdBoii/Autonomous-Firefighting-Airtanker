@@ -1,0 +1,9 @@
+A test input was created to better understand how to input 
+
+A MIG17 was taken as an input file to see how the DATCOM files are created and to understand the subsystems of the lightweight airplane design, as well as make changes as and where required.
+
+The MIG17 was based on the example provided in - http://wpage.unina.it/agodemar/DSV-DQV/DATCOM_Tutorial_I.pdf
+A few changes were made to encorporate control surfaces. The Citation example in the HolyCows example files was hevighly used as reference to better understand 
+how to define all the control surfaces as well as a bit more in depth explanation on how to model the wings- http://www.holycows.net/datcom/.
+
+Accordingly a DATCOM input file was created. For the example the center of mass was altered to create a stable aircraft, since that is what we will be focussing on even in the CL415
